@@ -11,8 +11,8 @@ BIN_NAME="$1_clang.out"
 else
 COMPILER='/usr/local/bin/g++-7'
 EXTRA_FLAGS='-lbenchmark'
-OUT_FILE="results/$1_results_gcc.csv"
-BIN_NAME="$1_gcc.out"
+OUT_FILE="results/$1_results.csv"
+BIN_NAME="$1.out"
 fi
 
 echo "Compilng with $COMPILER..."

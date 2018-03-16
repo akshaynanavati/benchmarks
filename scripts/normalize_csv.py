@@ -9,10 +9,15 @@ names = [
     'Size',
 ]
 
+sizes = []
+
 def normalize_name(name):
-    normal = name.split('/')[0]
+    normal, size = name.split('/')
     if normal not in names:
         names.append(normal)
+    size = int(size)
+    if size not in sizes:
+        sizes.append(size)
     return normal
 
 
@@ -29,8 +34,7 @@ if __name__ == '__main__':
         for row in reader:
             result_d[normalize_name(row['name'])].append(row['cpu_time'])
 
-    for i in range(5, 16):
-        result_d['Size'].append(2 ** i)
+    result_d['Size'] = sizes
 
     fstem = fname[:-4]
     with open(fstem + '_norm.csv', 'w') as f:

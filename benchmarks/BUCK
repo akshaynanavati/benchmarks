@@ -49,3 +49,13 @@ cxx_binary(
         'substring_with_chars.cpp'
     ],
 )
+
+cxx_binary(
+    name = 'dense_set',
+    srcs = [
+        'dense_set.cpp'
+    ],
+    deps = [
+        '//deps/falcon/iterators:dense_set'
+    ]
+)

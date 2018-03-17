@@ -25,7 +25,7 @@ template <class T> struct LLNode {
 };
 
 std::unique_ptr<LLNode<uint64_t>> randomLL(size_t n) {
-  std::mt19937_64 rng;
+  static std::mt19937_64 rng;
   auto head = std::make_unique<LLNode<uint64_t>>(rng());
   while (--n) {
     head = std::make_unique<LLNode<uint64_t>>(rng(), std::move(head));

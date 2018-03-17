@@ -18,7 +18,7 @@ template <class T> struct TrivialLLNode {
 };
 
 template <class Node> std::unique_ptr<Node> random(size_t n) {
-  std::mt19937_64 rng;
+  static std::mt19937_64 rng;
   auto head = std::make_unique<Node>(rng());
   while (--n) {
     head = std::make_unique<Node>(rng(), std::move(head));

@@ -1,0 +1,51 @@
+cxx_binary(
+    name = 'll_destructor',
+    srcs = [
+        'll_destructor.cpp'
+    ],
+    deps = [
+        '//deps/falcon/iterators:linked_list'
+    ]
+)
+
+cxx_binary(
+    name = 'factorial',
+    srcs = [
+        'factorial.cpp'
+    ],
+)
+
+cxx_binary(
+    name = 'for_accumulate',
+    srcs = [
+        'for_accumulate.cpp'
+    ],
+)
+
+cxx_binary(
+    name = 'll',
+    srcs = [
+        'll.cpp'
+    ],
+)
+
+cxx_binary(
+    name = 'lookup_int',
+    srcs = [
+        'lookup_int.cpp'
+    ],
+)
+
+cxx_binary(
+    name = 'lookup_string',
+    srcs = [
+        'lookup_string.cpp'
+    ],
+)
+
+cxx_binary(
+    name = 'substring_with_chars',
+    srcs = [
+        'substring_with_chars.cpp'
+    ],
+)

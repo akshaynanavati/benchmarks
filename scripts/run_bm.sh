@@ -7,12 +7,12 @@ then
 COMPILER='/usr/local/opt/llvm/bin/clang++'
 EXTRA_FLAGS="-L$HOME/clang-lib/ -lbenchmark -I$HOME/clang-lib/"
 OUT_FILE="results/$1_results_clang.csv"
-BIN_NAME="$1_clang.out"
+BIN_NAME="build/$1_clang.out"
 else
 COMPILER='/usr/local/bin/g++-7'
 EXTRA_FLAGS='-lbenchmark'
 OUT_FILE="results/$1_results.csv"
-BIN_NAME="$1.out"
+BIN_NAME="build/$1.out"
 fi
 
 echo "Compilng with $COMPILER..."

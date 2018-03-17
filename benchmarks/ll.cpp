@@ -5,10 +5,10 @@
 
 #define BM_SUM(exec)                                                           \
   void BM_sum_##exec(benchmark::State &state) {                                \
-    state.PauseTiming();                                                       \
-    auto head = randomLL(state.range(0));                                      \
-    state.ResumeTiming();                                                      \
     for (auto _ : state) {                                                     \
+      state.PauseTiming();                                                     \
+      auto head = randomLL(state.range(0));                                    \
+      state.ResumeTiming();                                                    \
       benchmark::DoNotOptimize(ll_sum_##exec(head.get()));                     \
     }                                                                          \
   }

@@ -4,10 +4,10 @@
 
 #define BM_FACTORIAL(exec)                                                     \
   void BM_##exec(benchmark::State &state) {                                    \
-    state.PauseTiming();                                                       \
-    uint64_t n = 1ul << (state.range(0) + 20);                                 \
-    state.ResumeTiming();                                                      \
     for (auto _ : state) {                                                     \
+      state.PauseTiming();                                                     \
+      uint64_t n = 1ul << (state.range(0) + 20);                               \
+      state.ResumeTiming();                                                    \
       benchmark::DoNotOptimize(factorial_##exec(n));                           \
     }                                                                          \
   }
@@ -45,7 +45,7 @@ BM_FACTORIAL(iterative);
 BM_FACTORIAL(tail);
 
 static void args(benchmark::internal::Benchmark *b) {
-  for (int i = 0; i < 18; ++i) {
+  for (int i = 0; i < 15; ++i) {
     b->Args({i});
   }
 }

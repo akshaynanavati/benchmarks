@@ -1,4 +1,4 @@
 def FlagsForFile( filename, **kwargs ):
   return {
-    'flags': [ '-x', 'c++', '-std=c++17', '-lbenchmark', '-I.', '-L$HOME/clang-lib'],
+    'flags': ['-E', '-v', '-x', 'c++', '-std=c++17', '-stdlib=libstdc++', '-lbenchmark', '-I.', '-L$HOME/clang-lib', '-Ideps/sparsehash/build/include', '-Ideps/falcon/include'],
   }

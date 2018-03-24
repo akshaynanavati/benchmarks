@@ -5,5 +5,5 @@ cpp = /usr/local/bin/gcc-7
 cc = /usr/local/bin/gcc-7
 ld = /usr/local/bin/g++-7
 aspp = /usr/local/bin/gcc-7
-cxxflags = -Wall -std=c++17 -O3 -lbenchmark
+cxxflags = -Wall -std=c++17 -O3 -lbenchmark -Ideps/falcon/include/
 ldflags = -lbenchmark

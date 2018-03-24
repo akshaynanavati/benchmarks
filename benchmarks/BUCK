@@ -51,11 +51,45 @@ cxx_binary(
 )
 
 cxx_binary(
+    name = 'hll_harmonic_mean',
+    srcs = [
+        'hll_harmonic_mean.cpp'
+    ],
+)
+
+cxx_binary(
+    name = 'hll',
+    srcs = [
+        'hll.cpp'
+    ],
+    deps = [
+        '//deps/falcon:falcon',
+    ]
+)
+
+cxx_binary(
+    name = 'map',
+    srcs = [
+        'map.cpp'
+    ],
+    deps = [
+        '//deps/falcon/falcon/trees:avl',
+        '//deps/falcon/falcon/trees:redblack',
+        '//deps/falcon/falcon/trees:splay',
+    ],
+)
+
+cxx_binary(
     name = 'dense_set',
     srcs = [
         'dense_set.cpp'
     ],
     deps = [
         '//deps/falcon/iterators:dense_set'
-    ]
+    ],
+    compiler_flags = [
+        '-Ideps/sparsehash/build/include',
+    ],
+    linker_flags = [
+    ],
 )

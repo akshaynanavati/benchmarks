@@ -1,3 +1,6 @@
 [submodule "falcon"]
 	path = deps/falcon
 	url = https://github.com/akshaynanavati/falcon
+[submodule "deps/sparsehash"]
+	path = deps/sparsehash
+	url = https://github.com/sparsehash/sparsehash

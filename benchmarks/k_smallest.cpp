@@ -44,13 +44,13 @@ Vector sortSelect(Vector &vec, size_t k) {
   return res;
 }
 
-Vector heapSelect(Vector &vec, size_t k) {
+Vector heapSelectK(Vector &vec, size_t k) {
   std::make_heap(vec.begin(), vec.begin() + k);
   for (auto it = vec.begin() + k; it < vec.end(); ++it) {
     if (*it <= vec[0]) {
-      std::pop_heap(vec.begin(), vec.end());
+      std::pop_heap(vec.begin(), vec.begin() + k);
       vec[k - 1] = *it;
-      std::push_heap(vec.begin(), vec.end());
+      std::push_heap(vec.begin(), vec.begin() + k);
     }
   }
   Vector res(k);
@@ -58,7 +58,19 @@ Vector heapSelect(Vector &vec, size_t k) {
   return res;
 }
 
-BM_SELECT(heapSelect);
+Vector heapSelectN(Vector &vec, size_t k) {
+  Vector res(k);
+  std::make_heap(vec.begin(), vec.end());
+  for (size_t i = 0; i < k; ++i) {
+    std::pop_heap(vec.begin(), vec.end());
+    res[i] = *(vec.end() - 1);
+    vec.pop_back();
+  }
+  return res;
+}
+
+BM_SELECT(heapSelectK);
+BM_SELECT(heapSelectN);
 BM_SELECT(quickSelect);
 BM_SELECT(sortSelect);
 

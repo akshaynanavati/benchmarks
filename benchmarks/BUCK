@@ -4,7 +4,7 @@ cxx_binary(
         'll_destructor.cpp'
     ],
     deps = [
-        '//deps/falcon/iterators:linked_list'
+        '//deps/falcon:falcon'
     ]
 )
 
@@ -73,9 +73,18 @@ cxx_binary(
         'map.cpp'
     ],
     deps = [
-        '//deps/falcon/falcon/trees:avl',
-        '//deps/falcon/falcon/trees:redblack',
-        '//deps/falcon/falcon/trees:splay',
+        '//deps/falcon:falcon',
+        '//deps/falcon:falcon',
+        '//deps/falcon:falcon',
+    ],
+)
+
+cxx_binary(
+    name = 'k_smallest',
+    srcs = [
+        'k_smallest.cpp'
+    ],
+    deps = [
     ],
 )
 
@@ -85,7 +94,7 @@ cxx_binary(
         'dense_set.cpp'
     ],
     deps = [
-        '//deps/falcon/iterators:dense_set'
+        '//deps/falcon:falcon',
     ],
     compiler_flags = [
         '-Ideps/sparsehash/build/include',

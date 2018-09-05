@@ -29,7 +29,7 @@ void BM_set(benchmark::State &state) {
   for (auto _ : state) {
     state.PauseTiming();
     Set<Int> s;
-    for (size_t i = 0; i < kLookups; ++i) {
+    for (auto i = 0; i < state.range(0); ++i) {
       s.insert(rng());
     }
     state.ResumeTiming();

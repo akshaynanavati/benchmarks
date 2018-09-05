@@ -1,9 +1,9 @@
 [cxx]
-cxxpp = /usr/local/bin/g++-7
-cxx = /usr/local/bin/g++-7
-cpp = /usr/local/bin/gcc-7
-cc = /usr/local/bin/gcc-7
-ld = /usr/local/bin/g++-7
-aspp = /usr/local/bin/gcc-7
+cxxpp = /usr/local/bin/g++-8
+cxx = /usr/local/bin/g++-8
+cpp = /usr/local/bin/gcc-8
+cc = /usr/local/bin/gcc-8
+ld = /usr/local/bin/g++-8
+aspp = /usr/local/bin/gcc-8
 cxxflags = -Wall -std=c++17 -O3 -lbenchmark -Ideps/falcon/include/
 ldflags = -lbenchmark
